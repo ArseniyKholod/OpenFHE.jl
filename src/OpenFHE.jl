@@ -38,7 +38,7 @@ export GetPlaintextModulus, GetDigitSize, GetStandardDeviation, GetSecretKeyDist
        SetEvalAddCount, SetKeySwitchCount, SetMultiHopModSize
 
 # FHECKKSRNS
-export GetBootstrapDepth
+export GetBootstrapDepth, EvalBootstrapSetup, EvalLinearTransformPrecompute, EvalLinearTransform
 
 # EncodingParams
 export EncodingParams
