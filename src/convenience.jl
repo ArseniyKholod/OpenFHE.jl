@@ -395,8 +395,8 @@ function EvalBootstrapSetup(fheckksrns::OpenFHE.FHECKKSRNS,
                        precompute)
 end
 function EvalLinearTransformPrecompute(fheckksrns::OpenFHE.FHECKKSRNS,
-                                       context::CxxWrap.CxxWrapCore.CxxRef{OpenFHE.CryptoContextImpl{OpenFHE.DCRTPoly}};
-                                       A,
+                                       context::CxxWrap.CxxWrapCore.CxxRef{OpenFHE.CryptoContextImpl{OpenFHE.DCRTPoly}},
+                                       A;
                                        scale = 1,
                                        L = 0)
     A = CxxWrap.StdLib.StdVector(CxxWrap.StdLib.StdVector.(convert(Vector{Vector{ComplexF64}}, A)))
