@@ -387,7 +387,7 @@ function EvalBootstrapSetup(fheckksrns::OpenFHE.FHECKKSRNS,
                             correction_factor = 0,
                             precompute = true)
     EvalBootstrapSetup(fheckksrns,
-                       context[],
+                       context,
                        CxxWrap.StdVector(UInt32.(level_budget)),
                        CxxWrap.StdVector(UInt32.(dim1)),
                        slots,
@@ -399,8 +399,9 @@ function EvalLinearTransformPrecompute(fheckksrns::OpenFHE.FHECKKSRNS,
                                        A,
                                        scale = 1,
                                        L = 0)
+    A = CxxWrap.StdLib.StdVector(CxxWrap.StdLib.StdVector.(convert(Vector{Vector{ComplexF64}}, A)))
     EvalLinearTransformPrecompute(fheckksrns,
-                                  context[],
+                                  context,
                                   A,
                                   scale,
                                   L)
