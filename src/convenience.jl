@@ -400,7 +400,7 @@ function EvalLinearTransformPrecompute(fheckksrns::OpenFHE.FHECKKSRNS,
                                        scale = 1,
                                        L = 0)
     EvalLinearTransformPrecompute(fheckksrns,
-                                  context[]
+                                  context[],
                                   A,
                                   scale,
                                   L)
