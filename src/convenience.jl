@@ -8,6 +8,8 @@ multiple OpenFHE objects and are continually reused during the encoding of new v
 """
 const EncodingParams = CxxWrap.StdLib.SharedPtr{EncodingParamsImpl}
 
+const FHECKKSRNS = CxxWrap.StdLib.SharedPtr{FHECKKSRNS}
+
 """
     CryptoContext{T}
 
