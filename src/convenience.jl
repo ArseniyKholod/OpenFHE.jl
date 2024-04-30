@@ -291,6 +291,22 @@ function EvalBootstrapSetup(context::CxxWrap.CxxWrapCore.CxxRef{OpenFHE.CryptoCo
                        precompute)
 end
 
+function EvalBootstrapSetup(fheckksrns::CxxWrap.CxxWrapCore.CxxRef{OpenFHE.FHECKKSRNS}
+                            context::CxxWrap.CxxWrapCore.CxxRef{OpenFHE.CryptoContextImpl{OpenFHE.DCRTPoly}};
+                            level_budget = [5, 4],
+                            dim1 = [0, 0],
+                            slots = 0,
+                            correction_factor = 0,
+                            precompute = true)
+    EvalBootstrapSetup(fheckksrns,
+                       context[],
+                       CxxWrap.StdVector(UInt32.(level_budget)),
+                       CxxWrap.StdVector(UInt32.(dim1)),
+                       slots,
+                       correction_factor,
+                       precompute)
+end
+
 """
     EvalBootstrap(crypto_context::CryptoContext, ciphertext::Ciphertext;
                   num_iterations = 1,
