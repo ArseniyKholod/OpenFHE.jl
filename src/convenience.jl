@@ -164,6 +164,9 @@ for (WrappedT, fun) in [
     :(EncodingParams) => :SetPlaintextGenerator,
     :(EncodingParams) => :GetBatchSize,
     :(EncodingParams) => :SetBatchSize,
+    :(FHECKKSRNS) => :EvalBootstrapSetup,
+    :(FHECKKSRNS) => :EvalLinearTransformPrecompute,
+    :(FHECKKSRNS) => :EvalLinearTransform,
 ]
     @eval function $fun(arg::$WrappedT, args...; kwargs...)
         $fun(arg[], args...; kwargs...)
